@@ -1,42 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 
-class SparePartsInventoryAssistant
+class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        List<string> inventory = new List<string>()
-        {
-            "hydraulic pump",
-            "PLC module",
-            "servo motor"
-        };
+        string part1 = "hydraulic pump";
+        string part2 = "plc module";
+        string part3 = "servo motor";
 
         Console.WriteLine("Hej. Welcome to the spare parts inventory!");
+        Console.WriteLine("Which part do you need?");
 
         while (true)
         {
-            Console.Write("Which part do you need? ");
-            string part = Console.ReadLine();
+            string input = Console.ReadLine();
             
-            if (part.Equals("Do you actually have any parts?", StringComparison.OrdinalIgnoreCase)
-                || part.Equals("Is there anything in stock at all?", StringComparison.OrdinalIgnoreCase))
+            if (input.ToLower() == "do you actually have any parts?")
             {
-                Console.WriteLine($"We have {inventory.Count} part(s)!");
-                foreach (var p in inventory)
-                {
-                    Console.WriteLine(p);
-                }
+                Console.WriteLine("We have 3 part(s)!");
+                Console.WriteLine(part1);
+                Console.WriteLine(part2);
+                Console.WriteLine(part3);
+                continue;
             }
-           
-            else if (inventory.Contains(part))
+            
+            if (input.ToLower() == "is there anything in stock at all?")
             {
-                Console.WriteLine($"I've got {part} here for you 😊. Bye!");
-                break; 
+                Console.WriteLine("We have 3 part(s)!");
+                Console.WriteLine(part1);
+                Console.WriteLine(part2);
+                Console.WriteLine(part3);
+                continue;
+            }
+            
+            if (input.ToLower() == part1.ToLower())
+            {
+                Console.WriteLine("I've got " + part1 + " here for you. Bye!");
+                break;
+            }
+            else if (input.ToLower() == part2.ToLower())
+            {
+                Console.WriteLine("I've got " + part2 + " here for you. Bye!");
+                break;
+            }
+            else if (input.ToLower() == part3.ToLower())
+            {
+                Console.WriteLine("I've got " + part3 + " here for you. Bye!");
+                break;
             }
             else
             {
-                Console.WriteLine($"I am afraid we don't have any {part} in the inventory 😔");
+                Console.WriteLine("I am afraid we don't have any " + input + " in the inventory");
+                Console.WriteLine("Which part do you need?");
             }
         }
     }
