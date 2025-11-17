@@ -1,0 +1,7 @@
+- Programmet spørger brugeren om, hvilken reservedel de leder efter.
+- Programmet har tre dele på lager: hydraulic pump, plc module og servo motor.
+- Brugeren kan også stille specialspørgsmål om lagerstatus.
+- Programmet sammenligner brugerens input med de tilgængelige dele.
+- Hvis delen findes, vises en bekræftelse, og programmet afsluttes.
+- Hvis delen ikke findes, vises en fejlbesked, og brugeren kan prøve igen.
+- Programmet kører i en loop, indtil der findes en del på lager.
